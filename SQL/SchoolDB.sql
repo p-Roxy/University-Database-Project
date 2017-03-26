@@ -8,6 +8,8 @@ go
 CREATE TABLE Student(
 StudentID 		INTEGER,
 StudentName 	CHAR(80),
+UserName        CHAR(80),
+Password        CHAR(80),
 PRIMARY KEY (StudentID));
 
 CREATE TABLE Pays(
