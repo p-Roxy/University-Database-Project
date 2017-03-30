@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>304 Project Final</title>
     <link rel="stylesheet" href="css/app.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/login.js" rel="script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="large-12 columns text-center">
@@ -23,5 +22,32 @@
 
     <button id="btnSubmit">Submit</button>
 </div>
+<script>
+    $('#btnSubmit').click(function () {
+        var mysql = require('mysql');
+
+        var connection = mysql.createConnection(
+            {
+                host     : 'localhost',
+                user     : 'root',
+                password : '123321',
+                database : 'SchoolDB_group4'
+            }
+        );
+        connection.connect();
+
+        var queryString = 'SELECT * FROM Student';
+
+        connection.query(queryString, function(err, rows, fields) {
+            if (err){ throw err;
+            alert("query fail");
+            }
+
+            alert(typeof rows);
+
+        connection.end();
+    })
+    });
+</script>
 </body>
 </html>
