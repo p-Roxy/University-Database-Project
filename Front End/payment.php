@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>304 Project Final</title>
     <link rel="stylesheet" href="css/app.css">
-    <script></script>
 </head>
 <body>
 <?php
@@ -14,7 +13,7 @@ $servername = "localhost";
 $username = "root";
 $password = "Ch0c0l4t3s";
 
-$conn = mysql_connect($servername, $username, $password);
+$conn = new mysql($servername, $username, $password);
 
 $db = mysql_select_db("SchoolDB_group4", $conn);
 
