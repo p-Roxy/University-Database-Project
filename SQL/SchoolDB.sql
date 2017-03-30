@@ -1,8 +1,8 @@
+drop database SchoolDB_group4;
+
 create database SchoolDB_group4;
-go
 
 use SchoolDB_group4;
-go
 
 CREATE TABLE Student(
 StudentID 		INTEGER,
@@ -21,19 +21,19 @@ CREATE TABLE Fees(
 	billNum		INTEGER,
 	CourseID		CHAR(10) NOT NULL,
 	amountDue 		REAL,
-	PRIMARY KEY(billNum, amountDue),
-	FOREIGN KEY (CourseID) REFERENCES Course
+	PRIMARY KEY(billNum),
+	FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE);
 
 CREATE TABLE Pays(
 	StudentID 		INTEGER,
 	billNum 		INTEGER,
-	amountDue			REAL,
+	amountTotal			REAL,
 	amountPaid			REAL,
-	PRIMARY KEY(StudentID, amountDue, billNum),
-	FOREIGN KEY(StudentID) REFERENCES Student,
-	FOREIGN KEY(billNum, amountDue) REFERENCES Fees(billNum,amountDue));
+	PRIMARY KEY(StudentID, billNum),
+	FOREIGN KEY(StudentID) REFERENCES Student(StudentID),
+	FOREIGN KEY(billNum) REFERENCES Fees(billNum));
 
 
 CREATE TABLE  Schedules_Room(
@@ -44,14 +44,14 @@ CREATE TABLE  Schedules_Room(
 	timeSlot		CHAR(20),
 	roomtype		CHAR(80),
 	PRIMARY KEY(roomID, courseID),
-	FOREIGN KEY(CourseID) REFERENCES Course)
+	FOREIGN KEY(CourseID) REFERENCES Course(CourseID));
 
 CREATE TABLE  Takes(
 StudentID		INTEGER,
 CourseID		CHAR(10),
 PRIMARY KEY(StudentID, CourseID),
-FOREIGN KEY(StudentID) references Student,
-FOREIGN KEY(CourseID) references Course);
+FOREIGN KEY(StudentID) references Student(StudentID),
+FOREIGN KEY(CourseID) references Course(CourseID) );
 
 CREATE TABLE Professor(
     profID		INTEGER,
@@ -64,11 +64,11 @@ CREATE TABLE Professor(
 CREATE TABLE Research(
     rID			CHAR(6),
 	profID		INTEGER NOT NULL,
-	Thesis 		CHAR(400),
+	Thesis 		CHAR(200),
 	reGrant			REAL,
 	labLocation		CHAR(20),
 	PRIMARY KEY(rID, profID),
-FOREIGN KEY(profID) REFERENCES Professor
+FOREIGN KEY(profID) REFERENCES Professor(profID)
 ON DELETE CASCADE
 ON UPDATE CASCADE);
 
@@ -78,7 +78,7 @@ CREATE TABLE TA(
 	taState 	CHAR(30),
 	WageperHour	REAL,
 	PRIMARY KEY(TAID),
-	FOREIGN KEY(StudentID) REFERENCES Student);
+	FOREIGN KEY(StudentID) REFERENCES Student(StudentID));
 
 
 CREATE TABLE TAs_Course(
@@ -86,8 +86,8 @@ CREATE TABLE TAs_Course(
 	CourseID	CHAR(10),
 	taHours		CHAR(50),
 	PRIMARY KEY (CourseID),
-	FOREIGN KEY (CourseID) REFERENCES Course,
-	FOREIGN KEY (TAID) references TA
+	FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
+	FOREIGN KEY (TAID) references TA(TAID)
 	ON DELETE NO ACTION
 	ON UPDATE CASCADE);
 
@@ -96,103 +96,43 @@ TAID			CHAR(6),
 	rID			CHAR(6),
 	profID		INTEGER,
 	PRIMARY KEY (rID, profID),
-	FOREIGN KEY (rID, profID) REFERENCES Research,
-	FOREIGN KEY (TAID) references TA);
+	FOREIGN KEY (rID, profID) REFERENCES Research(rID, profID),
+	FOREIGN KEY (TAID) references TA(TAID));
 
 
 --Insert instances into tables from part 2--
 --Student--
-insert into Student values
-(11110011, 'Keyla Hughes', 'khughes', 'c4ts4lyfe')
-insert into Student values
-(11110012, 'Abagail Petersen','aPetersen', 'l0l0l0l0l')
-insert into Student values
-(11110013, 'Grady Potts', 'gPotts', 't1m3turn3r')
-insert into Student values
-(11110014, 'Kara Jackson', 'kJackson', 'fg43g2g1')
-insert into Student values
-(11110015, 'Charlotte Vang', 'cVang', 'f9ewjg09')
+insert into Student (StudentID, StudentName, UserName, Password) values
+(11110011, 11110012, 11110013, 11110014,11110015), ('Keyla Hughes', 'Abagail Petersen', 'Grady Potts', 'Kara Jackson', 'Charlotte Vang'),
+('khughes', 'aPetersen','aPetersen', 'kJackson', 'cVang'), ('c4ts4lyfe', 'l0l0l0l0l', 't1m3turn3r', 'fg43g2g1',  'f9ewjg09')
 
 --Course--
-insert into Course values
-('CPSC 322', 'Artificial Intelligence', 3)
-insert into Course values
-('CPSC 310', 'Software Engineering', 3)
-insert into Course values
-('CPSC 311', 'Definition of Programming Languages', 2)
-insert into Course values
-('CPSC 304', 'Relational Databases', 3)
-insert into Course values
-('CPSC 221', 'Introduction to Algorithms', 3)
+insert into Course (CourseID, cSubject, Credits) values
+('CPSC 322', 'CPSC 310','CPSC 311','CPSC 304','CPSC 221'),('Artificial Intelligence', 'Software Engineering','Definition of Programming Languages','Relational Databases','Introduction to Algorithms'),
+(3, 3, 2, 3, 3)
 
 --Fees--
-insert into Fees values
-(7681, 'CPSC 322', 568.91)
-insert into Fees values
-(7833,
- 'CPSC 310',
- 620.51)
-insert into Fees values
-(7688,
- 'CPSC 311',
- 123.25)
-insert into Fees values
-(7767,
- 'CPSC 304',
- 456.72)
-insert into Fees values
-(8765,
- 'CPSC 221',
- 487.25)
+insert into Fees (billNum, CourseID, amountDue) values
+(7681, 7833, 7688, 7767, 8765),('CPSC 322', 'CPSC 310','CPSC 311','CPSC 304','CPSC 221'), (568.91, 620.51, 123.25, 456.72, 487.25)
 
 --Pays--
-insert into Pays values
-(11110011, 7681, 568.91, 0)
-insert into Pays values
-(11110012, 7833,  620.51, 0)
-insert into Pays values
-(11110013, 7688, 123.25, 0)
-insert into Pays values
-(11110014, 7767, 456.72, 0)
-insert into Pays values
-(11110015, 8765, 487.25, 0)
+insert into Pays (StudentID, billNum, amountTotal, amountPaid) values
+(11110011, 11110012, 11110013, 11110014,11110015),(7681, 7833, 7688, 7767, 8765),(568.91, 620.51, 123.25, 456.72, 487.25), (0,0,0,0,0)
 
 --Schedules Rooms--
 insert into Schedules_Room values
-('HDP110', 'CPSC 322', 'MWF', 200, '11am - 12pm', 'Lecture Hall')
-insert into Schedules_Room values
-('HDP310', 'CPSC 310', 'TR', 120, '1pm-2:30pm', 'Lecture Hall')
-insert into Schedules_Room values
-('Swing121', 'CPSC 311', 'TR', 190, '7pm-9pm', 'Lecture Hall' )
-insert into Schedules_Room values
-('PSB1201', 'CPSC 304', 'MWF', 10, '8am-12pm', 'Studio')
-insert into Schedules_Room values
-('ICCS330', 'CPSC 221', 'MWF', 30, '2pm - 3pm', 'Lab')
+('HDP110','HDP310', 'Swing121','PSB1201','ICCS330'),('CPSC 322', 'CPSC 310','CPSC 311','CPSC 304','CPSC 221'), (200,120,190,10,30),
+('11am - 12pm','1pm-2:30pm', '7pm-9pm','8am-12pm','2pm - 3pm'), ('Lecture Hall','Lecture Hall','Lecture Hall','Studio', 'Lab')
 
 
 --Takes--
-insert into Takes values
-(11110011, 'CPSC 322')
-insert into Takes values
-(11110012, 'CPSC 310')
-insert into Takes values
-(11110013, 'CPSC 311')
-insert into Takes values
-(11110014, 'CPSC 304')
-insert into Takes values
-(11110015, 'CPSC 221')
+insert into Takes (StudentID, CourseID) values
+(11110011, 11110012, 11110013, 11110014,11110015),('CPSC 322', 'CPSC 310','CPSC 311','CPSC 304','CPSC 221')
 
 --Professor--
 insert into Professor values
-(11, 'Allan', 'ICCS 241', 4, 'Allanb0mb')
-insert into Professor values
-(22, 'Bill', 'ICCS 320', 3, '1PnchM4n')
-insert into Professor values
-(33, 'Claire', 'ICCS 220', 7, 'Br4nchB0und')
-insert into Professor values
-(44, 'Eric', 'ICCS 110', 5, 'R0ckstr7')
-insert into Professor values
-(55, 'Fred', 'ICCS 310', 9, 'ImaLmb3rj4k')
+(11, 22, 33, 44, 55), ('Allan', 'Bill', 'Claire', 'Eric', 'Fred'), ('ICCS 241','ICCS 321','ICCS 220','ICCS 110','ICCS 310'), (4,3,7,5,9),
+('Allanb0mb','1PnchM4n','Br4nchB0und','R0ckstr7', 'ImaLmb3rj4k')
 
 --Research--
 insert into Research values
@@ -209,6 +149,7 @@ insert into Research values
 
 --TA--
 insert into TA values
+(11110011, 11110012, 11110013, 11110014,11110015), ('TA0023','TA0023','TA0023','TA0023','TA002',), ('Working','Working','Not Working','Working','Not Working'), (21.13,21.13,0,21.13,0)
 (11110011, 'TA0023', 'Working', 21.13)
 insert into TA values
 (11110012, 'TA0024', 'Working', 21.13)
