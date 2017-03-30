@@ -22,8 +22,8 @@
             <div class="callout">
                 <h3>Group 4</h3>
                 <div id="bgroup">
-                <div class="button">Login</div>
-                <div class="button">Register</div>
+                <div class="button" onclick="Openlogin()">Login</div>
+                <div class="button" onclick="OpenRegister()">Register</div>
                 </div>
                 <div class="row" id="group">
                     <div class="input-group large-4 medium-6 small-8 columns small-centered">
@@ -65,6 +65,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    function Openlogin() {
+        window.open("login.html","_self");
+    }
+    function OpenRegister() {
+        window.open("register.html","_self");
+    }
+</script>
 </body>
 </html>
 

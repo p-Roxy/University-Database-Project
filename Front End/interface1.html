@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>304 Project Final</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/login.js" rel="script"></script>
+</head>
+<body>
+<div class="large-12 columns text-center">
+    <img src="css/images/g4logo@.5x.png" id="logo" alt="School Welcome">
+    <h1>Course information</h1>
+    <h2>The table will be shown below:</h2>
+    <table id = "tblResults"></table>
+</div>
+<script>
+
+
+    function  generateTable(data) {
+    var tbl_body = document.createElement("tbody");
+    var odd_even = false;
+    console.log("DATA",data);
+    $.each(data,function () {
+        var tbl_row = tbl_body.insertRow();
+        tbl_row.className = odd_even ? "odd" : "even";
+        $.each(this, function (k, v) {
+            var cell = tbl_row.insertCell();
+            cell.appendChild(document.createTextNode(v.toString()));
+        })
+        odd_even = !odd_even;
+    })
+    document.getElementById("tblResults").appendChild(tbl_body);
+}</script>
+</body>
+</html>
