@@ -44,3 +44,35 @@ function  generateTable(data) {
     })
     document.getElementById("tblResults").appendChild(tbl_body);
 }
+
+/** Deals with the forms on the login page
+ *  sends form input value to server to validate
+ *  @param ()
+ *  @return {*}
+ */
+$(document).ready(function () {
+    $("#codeform").submit(function (e) {
+        var text = $('input#code').val();
+        $.ajax({
+            url: window.puppetURL + "/token/validate/" + text,
+            success: function (result) {
+                // content back, was admin code and this is the new code
+                if (result !== '') {
+                    sessionStorage.setItem("token", text);
+                    window.location.href = 'codegen.html';
+                }
+                // valid - empty result, but not a HTTP error
+                else if (result !== text) {
+                    sessionStorage.setItem("token", text);
+                    window.location.href = 'selection.html';
+                } else {
+                    $("#codeerror").html("Invalid Code");
+                }
+            },
+            error: function () {
+                $("#codeerror").html("Invalid Code");
+            }
+        });
+        e.preventDefault();
+    });
+});
