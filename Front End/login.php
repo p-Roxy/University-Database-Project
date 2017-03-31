@@ -26,8 +26,8 @@ if (isset($_SESSION['login_user'])) {
     <input type="password" id="password" name="password" placeholder="*****"/>
         <div class="large-6 medium-6 small-6 columns small-centered text-center">
         I am a <select name="type">
-            <option name="student">Student <div class="arrow-down"></div></option>
-            <option name="professor">Instructor <div class="arrow-down"></div></option>
+            <option name="student">Student</option>
+            <option name="professor">Instructor</option>
         </select>
         </div>
     <input type="submit" name="submit" id="btnSubmit" value="Login">
@@ -35,14 +35,4 @@ if (isset($_SESSION['login_user'])) {
 </div>
 
 </body>
-<script>
-    function changeState(object) {
-        if (object.checked == true) {
-            object.checked = false;
-            console.log(object.checked);
-        } else {
-            object.checked = true;
-        }
-    }
-</script>
 </html>

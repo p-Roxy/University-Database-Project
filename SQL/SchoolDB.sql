@@ -16,7 +16,7 @@ CREATE TABLE Fees(
 	billNum		INTEGER,
 	CourseID		CHAR(10) NOT NULL,
 	amountDue 		REAL,
-	PRIMARY KEY(billNum, amountDue),
+	PRIMARY KEY(billNum),
 	FOREIGN KEY (CourseID) REFERENCES Course
 	ON DELETE CASCADE);
 
@@ -27,7 +27,7 @@ CREATE TABLE Pays(
 	amountPaid			REAL,
 	PRIMARY KEY(StudentID, amountDue, billNum),
 	FOREIGN KEY(StudentID) REFERENCES Student,
-	FOREIGN KEY(billNum, amountDue) REFERENCES Fees(billNum,amountDue));
+	FOREIGN KEY(billNum) REFERENCES Fees(billNum));
 
 
 CREATE TABLE  Schedules_Room(

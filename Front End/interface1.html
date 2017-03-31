@@ -8,10 +8,24 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+
+<div class="row nav">
+    <div class="large-4, medium-4, small-4 columns">
+
+        <img src="css/images/g4logo.png" id="nav" alt="School Welcome">
+        <p>Welcome <?php echo $sname;?></p>
+    </div>
+    <div class="large-8, medium-8, small-8 columns">
+        <ul>
+            <li><a href="/index.html" class="nav">Sign out</a></li>
+            <li><a href="/interface3.html" class="nav">Payment</a></li>
+            <li><a href="/interface4.html" class="nav">Research</a></li>
+        </ul>
+    </div>
+</div>
 <div class="large-12 columns text-center">
-    <img src="css/images/g4logo@.5x.png" id="logo" alt="School Welcome">
     <h1>Course information</h1>
-    <h2>The table will be shown below:</h2>
+    <h6>The table will be shown below:</h6>
     <table id = "tblResults"></table>
 </div>
 <script>
