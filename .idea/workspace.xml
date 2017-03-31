@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2691468e-241d-4a21-915e-f4cf7d2981da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Front End/payment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Front End/loginHelper.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/css/app.css" afterPath="$PROJECT_DIR$/Front End/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/interface1.html" afterPath="$PROJECT_DIR$/Front End/interface1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/login.php" afterPath="$PROJECT_DIR$/Front End/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/loginHelper.php" afterPath="$PROJECT_DIR$/Front End/loginHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/SchoolDB.sql" afterPath="$PROJECT_DIR$/SQL/SchoolDB.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +33,8 @@
       <file leaf-file-name="SchoolDB.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SQL/SchoolDB.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="139" column="23" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="148" selection-end-column="28" />
+            <state relative-caret-position="381">
+              <caret line="100" column="37" lean-forward="true" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -80,9 +77,12 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="284">
+              <caret line="136" column="23" lean-forward="true" selection-start-line="136" selection-start-column="23" selection-end-line="136" selection-end-column="23" />
+              <folding>
+                <marker date="1490944954441" expanded="true" signature="4455:4528" ph="select * fro... student" />
+                <marker date="1490944954441" expanded="true" signature="4595:4670" ph="select * fro... professor" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interface3.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="interface3.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/interface3.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="240" column="70" lean-forward="false" selection-start-line="240" selection-start-column="70" selection-end-line="240" selection-end-column="70" />
+            <state relative-caret-position="186">
+              <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
               <folding>
                 <marker date="1490942819819" expanded="true" signature="3482:3553" ph="SELECT Stude... Student" />
                 <marker date="1490942819819" expanded="true" signature="3665:3745" ph="SELECT amoun... Pays" />
@@ -113,20 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginHelper.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front End/loginHelper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <marker date="1490942855065" expanded="true" signature="4086:4159" ph="select * fro... student" />
-                <marker date="1490942855065" expanded="true" signature="4226:4301" ph="select * fro... professor" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="interface1.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="interface1.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Front End/interface1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
@@ -139,8 +126,8 @@
       <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="570" column="17" lean-forward="false" selection-start-line="570" selection-start-column="17" selection-end-line="570" selection-end-column="17" />
+            <state relative-caret-position="104">
+              <caret line="140" column="36" lean-forward="true" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -165,9 +152,9 @@
       <find>update</find>
       <find>sub</find>
       <find>connection</find>
-      <find>submit</find>
       <find>large-6</find>
       <find>h1</find>
+      <find>submit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,12 +169,12 @@
         <option value="$PROJECT_DIR$/SQL/SchoolDB.sql" />
         <option value="$PROJECT_DIR$/dump" />
         <option value="$PROJECT_DIR$/Front End/payment.php" />
-        <option value="$PROJECT_DIR$/Front End/loginHelper.php" />
         <option value="$PROJECT_DIR$/Front End/login.html" />
-        <option value="$PROJECT_DIR$/Front End/css/app.css" />
-        <option value="$PROJECT_DIR$/Front End/login.php" />
         <option value="$PROJECT_DIR$/Front End/interface1.html" />
         <option value="$PROJECT_DIR$/Front End/interface3.php" />
+        <option value="$PROJECT_DIR$/Front End/loginHelper.php" />
+        <option value="$PROJECT_DIR$/Front End/css/app.css" />
+        <option value="$PROJECT_DIR$/Front End/login.php" />
       </list>
     </option>
   </component>
@@ -229,6 +216,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="University-Database-Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="University-Database-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="University-Database-Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SQL" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,7 +381,7 @@
       <option name="presentableId" value="Default" />
       <updated>1490753180234</updated>
       <workItem from="1490753199372" duration="6004000" />
-      <workItem from="1490915077043" duration="15121000" />
+      <workItem from="1490915077043" duration="16927000" />
     </task>
     <task id="LOCAL-00001" summary="added php functionality">
       <created>1490942838429</created>
@@ -389,11 +390,25 @@
       <option name="project" value="LOCAL" />
       <updated>1490942838429</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added php functionality">
+      <created>1490942888309</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1490942888309</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added php functionality">
+      <created>1490942905342</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1490942905342</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21125000" />
+    <option name="totallyTimeSpent" value="22931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -479,14 +494,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Front End/interface3.html" />
-    <entry file="file://$PROJECT_DIR$/SQL/SchoolDB.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="139" column="23" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="148" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dump">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
@@ -525,25 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="570" column="17" lean-forward="false" selection-start-line="570" selection-start-column="17" selection-end-line="570" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/loginHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <marker date="1490942855065" expanded="true" signature="4086:4159" ph="select * fro... student" />
-            <marker date="1490942855065" expanded="true" signature="4226:4301" ph="select * fro... professor" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front End/interface4.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -552,11 +540,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/interface3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+          <folding>
+            <marker date="1490942819819" expanded="true" signature="3482:3553" ph="SELECT Stude... Student" />
+            <marker date="1490942819819" expanded="true" signature="3665:3745" ph="SELECT amoun... Pays" />
+            <marker date="1490942819819" expanded="true" signature="5378:5452" ph="update pays " />
+            <marker date="1490942819819" expanded="true" signature="5523:5603" ph="SELECT amoun... Pays" />
+            <marker date="1490942819819" expanded="true" signature="5942:5960" ph="select * fro... pays" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/loginHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="140" column="36" lean-forward="true" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/SchoolDB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="100" column="37" lean-forward="true" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Front End/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="284">
+          <caret line="136" column="23" lean-forward="true" selection-start-line="136" selection-start-column="23" selection-end-line="136" selection-end-column="23" />
+          <folding>
+            <marker date="1490944954441" expanded="true" signature="4455:4528" ph="select * fro... student" />
+            <marker date="1490944954441" expanded="true" signature="4595:4670" ph="select * fro... professor" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -565,20 +594,6 @@
         <state relative-caret-position="152">
           <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="21" selection-end-column="72" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/interface3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="240" column="70" lean-forward="false" selection-start-line="240" selection-start-column="70" selection-end-line="240" selection-end-column="70" />
-          <folding>
-            <marker date="1490942819819" expanded="true" signature="3482:3553" ph="SELECT Stude... Student" />
-            <marker date="1490942819819" expanded="true" signature="3665:3745" ph="SELECT amoun... Pays" />
-            <marker date="1490942819819" expanded="true" signature="5378:5452" ph="update pays " />
-            <marker date="1490942819819" expanded="true" signature="5523:5603" ph="SELECT amoun... Pays" />
-            <marker date="1490942819819" expanded="true" signature="5942:5960" ph="select * fro... pays" />
-          </folding>
         </state>
       </provider>
     </entry>
