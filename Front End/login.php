@@ -20,41 +20,29 @@ if (isset($_SESSION['login_user'])) {
     <img src="css/images/g4logo@.5x.png" id="logo" alt="School Welcome">
     <h1>Login</h1>
 </div>
-<div class="large-6 medium-8 small-6 text-left small-centered columns">
-    <input type="text" id="code" placeholder="Username" name="room code"/>
-    <input type="password" id="password" placeholder="*****"/>
-    <div class="large-6 medium-8 small-6 small-centered columns"> <input type="radio" id="student" name="role" value="stud">I am a student </div>
-    <div class="large-6 medium-8 small-6 small-centered columns"><input type="radio" id="instructor" name="role" value="ins">I am an instructor</div>
-
-
-    <button id="btnSubmit">Submit</button>
+<div class="large-6 medium-6 small-6 text-left small-centered columns">
+    <form method="post" action="loginHelper.php">
+    <input type="text" id="code" placeholder="Username" name="username"/>
+    <input type="password" id="password" name="password" placeholder="*****"/>
+        <div class="large-6 medium-6 small-6 columns small-centered text-center">
+        I am a <select name="type">
+            <option name="student">Student <div class="arrow-down"></div></option>
+            <option name="professor">Instructor <div class="arrow-down"></div></option>
+        </select>
+        </div>
+    <input type="submit" name="submit" id="btnSubmit" value="Login">
+    </form>
 </div>
-<script>
-    $('#btnSubmit').click(function () {
-        var mysql = require('mysql');
 
-        var connection = mysql.createConnection(
-            {
-                host     : 'localhost',
-                user     : 'root',
-                password : '123321',
-                database : 'SchoolDB_group4'
-            }
-        );
-        connection.connect();
-
-        var queryString = 'SELECT * FROM Student';
-
-        connection.query(queryString, function(err, rows, fields) {
-            if (err){ throw err;
-            alert("query fail");
-            }
-
-            alert(typeof rows);
-
-        connection.end();
-    })
-    });
-</script>
 </body>
+<script>
+    function changeState(object) {
+        if (object.checked == true) {
+            object.checked = false;
+            console.log(object.checked);
+        } else {
+            object.checked = true;
+        }
+    }
+</script>
 </html>
