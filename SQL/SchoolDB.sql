@@ -52,6 +52,7 @@ CREATE TABLE Professor(
 	profName		CHAR(20),
 	officeLocation	CHAR(20),
 	Rating		INTEGER,
+UserName        CHAR(80),
 	Password		CHAR(20),
 	PRIMARY KEY(profID));
 
@@ -175,15 +176,15 @@ insert into Takes values
 
 --Professor--
 insert into Professor values
-(11, 'Allan', 'ICCS 241', 4, 'Allanb0mb');
+(11, 'Allan', 'ICCS 241', 4, 'Allan', 'Allanb0mb');
 insert into Professor values
-(22, 'Bill', 'ICCS 320', 3, '1PnchM4n');
+(22, 'Bill', 'ICCS 320', 3, 'Bill' , '1PnchM4n');
 insert into Professor values
-(33, 'Claire', 'ICCS 220', 7, 'Br4nchB0und');
+(33, 'Claire', 'ICCS 220', 7, 'Claire', 'Br4nchB0und');
 insert into Professor values
-(44, 'Eric', 'ICCS 110', 5, 'R0ckstr7');
+(44, 'Eric', 'ICCS 110', 5, 'Eric', 'R0ckstr7');
 insert into Professor values
-(55, 'Fred', 'ICCS 310', 9, 'ImaLmb3rj4k');
+(55, 'Fred', 'ICCS 310', 9, 'Fred', 'ImaLmb3rj4k');
 
 --Research--
 insert into Research values

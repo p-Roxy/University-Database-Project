@@ -237,7 +237,7 @@ $amountDue = $array1[2];
     <div class="large-8, medium-8, small-8 columns">
         <ul>
             <li><a href="/index.html" class="nav">Sign out</a></li>
-            <li><a href="/interface4.html" class="nav">Research</a></li>
+            <li><a href="/research.php" class="nav">Research</a></li>
             <li><a href="/interface1.html" class="nav">Course</a></li>
         </ul>
     </div>

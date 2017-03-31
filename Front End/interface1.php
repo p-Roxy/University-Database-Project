@@ -123,7 +123,7 @@ echo htmlentities($e['message']);
         <ul>
             <li><a href="/index.html" class="nav">Sign out</a></li>
             <li><a href="/interface3.html" class="nav">Payment</a></li>
-            <li><a href="/interface4.html" class="nav">Research</a></li>
+            <li><a href="/research.php" class="nav">Research</a></li>
         </ul>
     </div>
 </div>

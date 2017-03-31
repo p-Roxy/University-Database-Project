@@ -15,6 +15,7 @@ $error=''; // Variable To Store Error Message
 
 $success = True; //keep track of errors so it redirects the page only if there are no errors
 $db_conn = OCILogon("ora_a6g0b", "a28558147", "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dbhost.ugrad.cs.ubc.ca)(PORT = 1522)))(CONNECT_DATA=(SID=ug)))");
+$username = $password = $select = '';
 
 function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL command and executes it
 //echo "<br>running ".$cmdstr."<br>";
@@ -93,7 +94,6 @@ function printResult($result) { //prints results from a select statement
 
 // Connect Oracle...
 if ($db_conn) {
-    $username = $password = $select = '';
 
     if (array_key_exists('submit', $_POST)) {
 
@@ -103,23 +103,18 @@ if ($db_conn) {
             $username = stripslashes($_POST['username']);
             $password = stripslashes($_POST['password']);
             $select = $_POST['type'];
-            $query = executePlainSQL("select * from '$select' where username='$username' and password='$password''");
-            $array = oci_fetch_array($query);
-            if (sizeof($array) == 1) {
+            $query = executePlainSQL("select * from $select where username='$username' and password='$password'");
+            $success = false;
+            while($row = oci_fetch_array($query)){
+                $success = true;
+            }
+            if($success == true) {
                 $_SESSION['login_user'] = $username;
                 header("location: interface1.php");
+            } else {
+                $error = 'Invalid login information';
             }
         }
-    }
-
-
-
-    if ($_POST && $success) {
-        //POST-REDIRECT-GET -- See http://en.wikipedia.org/wiki/Post/Redirect/Get
-        header("location: interface3.php");
-    } else {
-        // Select data...
-        $result = executePlainSQL("select * from pays");
     }
 
     //Commit to save changes...
@@ -143,7 +138,7 @@ if ($db_conn) {
             I am a <select name="type">
                 <option name="select" value="select"> Select</option>
                 <option name="student" value="student">Student</option>
-                <option name="professor" value="instructor">Instructor</option>
+                <option name="professor" value="professor">Instructor</option>
             </select>
             <p><? echo $select;?></p>
         </div>
