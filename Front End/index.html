@@ -21,44 +21,9 @@
             <div class="callout">
                 <h3>Group 4</h3>
                 <div id="bgroup">
-                <div class="button" onclick="Openlogin()">Login</div>
-                <div class="button" onclick="OpenRegister()">Register</div>
-                </div>
-                <div class="row" id="group">
-                    <div class="input-group large-4 medium-6 small-8 columns small-centered">
-                        <form id="signin">
-                            <div class="row">
-                                <div class="large-6 medium-8 small-6 text-left small-centered columns">
-                                    <input type="text" id="code" placeholder="Username" name="room code"/>
-                                    <input type="password" id="password" placeholder="*****"/>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <span class="codeerror"></span>
-                            </div>
-                            <div class="row">
-                                <input type="submit" class="button" value="Join"/>
-                            </div>
-                        </form>
-                        <form id="register">
-                            <div class="row">
-                                <div class="large-6 medium-8 small-6 small-centered columns">
-                                    <input type="text" id="" placeholder="ID"/>
-                                    <input type="text" id="" placeholder="Full Name"/>
-                                    <input type="text" id="" placeholder="Email"/>
-                                    <input type="text" id="" placeholder="Username"/>
-                                    <input type=password id="" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <span class="codeerror"></span>
-                            </div>
-                            <div class="row">
-                                <input type="submit" class="button" value="Check" />
-                            </div>
-                        </form>
-
-                    </div>
+                <div class="button" onclick="OpenStudent()">Student</div>
+                    <div class="button" onclick="OpenTA()">TA</div>
+                    <div class="button" onclick="OpenProfessor()">Professor</div>
                 </div>
             </div>
         </div>
@@ -66,11 +31,14 @@
 </div>
 
 <script>
-    function Openlogin() {
-        window.open("login.html","_self");
+    function OpenTA() {
+        window.open("talogin.php","_self");
     }
-    function OpenRegister() {
-        window.open("register.html","_self");
+    function OpenStudent() {
+        window.open("slogin.php","_self");
+    }
+    function OpenProfessor() {
+        window.open("plogin.php","_self");
     }
 </script>
 </body>

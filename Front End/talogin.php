@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,24 +102,20 @@ if ($db_conn) {
             $error = 'Invalid login information';
         } else {
             $username = stripslashes($_POST['username']);
+            $profid = stripslashes($_POST['profid']);
             $password = stripslashes($_POST['password']);
-            $select = $_POST['type'];
-            $query = executePlainSQL("select * from $select where username='$username' and password='$password'");
+            $query = executePlainSQL("select * from ta t, student s where s.username='$username' and s.password='$password' and t.taid='$profid'");
             $success = false;
             while($row = oci_fetch_array($query)){
-            	$success = true;
-            } 
-            if($success == true) {
-        		$_SESSION['username'] = $username;
-        		if (strcmp($select,'professor') == 0) {
-        			header("location pprofile.php");
-        		} else {
-        			header("location: interface1.php");
-        		}
-            } else {
-            	$error = 'Invalid login information';
+                $success = true;
             }
-        } 
+            if($success == true) {
+                $_SESSION['login_user'] = $username;
+                header("location: taprofile.php");
+            } else {
+                $error = 'Invalid login information';
+            }
+        }
     }
 
     //Commit to save changes...
@@ -135,17 +132,11 @@ if ($db_conn) {
     <h1>Login</h1>
 </div>
 <div class="large-6 medium-6 small-6 text-left small-centered columns">
-    <form method="post" action="login.php">
+    <form method="post" action="talogin.php">
         <input type="text" id="code" placeholder="Username" name="username"/>
+        <input type="text" id="code" placeholder="ID" name="profid"/>
         <input type="password" id="password" name="password" placeholder="*****"/>
         <div class="large-6 medium-6 small-6 columns small-centered text-center">
-            I am a <select name="type">
-                <option name="select" value="select"> Select</option>
-                <option name="student" value="student">Student</option>
-                <option name="professor" value="professor">Instructor</option>
-            </select>
-            <p><? echo $select;?></p>
-        </div>
         <input type="submit" name="submit" id="btnSubmit" value="Login">
     </form>
     <p><?php echo $error?></p>

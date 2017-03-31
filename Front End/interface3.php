@@ -100,7 +100,7 @@ function test_input($data) {
 
 // Connect Oracle...
 if ($db_conn) {
-	$username = "gPotts";//$_SESSION["login_name"];
+	$username = $_SESSION["login_name"];
 $res = executePlainSQL("SELECT StudentID, StudentName FROM Student WHERE Username = '$username'");
 $array = oci_fetch_array($res);
 $studentID = (int)$array[0];
@@ -236,9 +236,9 @@ $amountDue = $array1[2];
     </div>
     <div class="large-8, medium-8, small-8 columns">
         <ul>
-            <li><a href="/index.html" class="nav">Sign out</a></li>
-            <li><a href="/research.php" class="nav">Research</a></li>
-            <li><a href="/interface1.html" class="nav">Course</a></li>
+            <a href="/index.html" class="nav"><li>Sign out</li></a>
+            <a href="/index.html" class="nav"><li>Research</li></a>
+            <a href="/interface1.html" class="nav"><li>Courses</li></a>
         </ul>
     </div>
 </div>
