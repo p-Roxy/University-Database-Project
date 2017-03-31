@@ -13,6 +13,9 @@
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 
+$success = True; //keep track of errors so it redirects the page only if there are no errors
+$db_conn = OCILogon("ora_a6g0b", "a28558147", "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dbhost.ugrad.cs.ubc.ca)(PORT = 1522)))(CONNECT_DATA=(SID=ug)))");
+
 function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL command and executes it
 //echo "<br>running ".$cmdstr."<br>";
     global $db_conn, $success;
@@ -88,50 +91,44 @@ function printResult($result) { //prints results from a select statement
 
 }
 
-if (isset($_POST['submit'])) {
-    if (empty($_POST['username']) || empty($_POST['password'])) {
-        $error = "Username or Password is invalid";
-    }
-    else
-    {
-// Define $username and $password
-        $username=$_POST['username'];
-        $password=$_POST['password'];
-// Establishing Connection with Server by passing server_name, user_id and password as a parameter
+// Connect Oracle...
+if ($db_conn) {
+    $username = $password = $select = '';
 
-        $success = True; //keep track of errors so it redirects the page only if there are no errors
-        $db_conn = OCILogon("ora_a6g0b", "a28558147", "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dbhost.ugrad.cs.ubc.ca)(PORT = 1522)))(CONNECT_DATA=(SID=ug)))");
-// To protect MySQL injection for Security purpose
-        $username = stripslashes($username);
-        $password = stripslashes($password);
-        $username = prepare($username);
-        $password = prepare($password);
-// Selecting Database
-        if ($db_conn) {
-// SQL query to fetch information of registerd users and finds user match.
-            global $query;
+    if (array_key_exists('submit', $_POST)) {
+
+        if (empty($_POST['username']) || empty($_POST['password'])) {
+            $error = 'Invalid login information';
+        } else {
+            $username = stripslashes($_POST['username']);
+            $password = stripslashes($_POST['password']);
             $select = $_POST['type'];
-            $student = "Student";
-            if (strcmp($select, $student) !== 0) {
-                $query = executePlainSQL("select * from student where password='$password' AND username='$username'");
-            } else {
-                $query = executePlainSQL("select * from professor where password='$password' AND username='$username'");
+            $query = executePlainSQL("select * from '$select' where username='$username' and password='$password''");
+            $array = oci_fetch_array($query);
+            if (sizeof($array) == 1) {
+                $_SESSION['login_user'] = $username;
+                header("location: interface1.php");
             }
-            $rows = oci_fetch_array($query);
-            if ($rows == 1) {
-                $_SESSION['login_user'] = $username; // Initializing Session
-                header("location: profile.php"); // Redirecting To Other Page
-            } else {
-                $error = "Username or Password is invalid";
-            }
-            OCILogoff($db_conn);
-        }
-        else {
-            echo "cannot connect";
-            $e = OCI_Error(); // For OCILogon errors pass no handle
-            echo htmlentities($e['message']);
         }
     }
+
+
+
+    if ($_POST && $success) {
+        //POST-REDIRECT-GET -- See http://en.wikipedia.org/wiki/Post/Redirect/Get
+        header("location: interface3.php");
+    } else {
+        // Select data...
+        $result = executePlainSQL("select * from pays");
+    }
+
+    //Commit to save changes...
+    OCILogoff($db_conn);
+} else {
+    echo "cannot connect";
+    $e = OCI_Error(); // For OCILogon errors pass no handle
+    echo htmlentities($e['message']);
+
 }
 ?>
 <div class="large-12 columns text-center">
@@ -144,11 +141,11 @@ if (isset($_POST['submit'])) {
         <input type="password" id="password" name="password" placeholder="*****"/>
         <div class="large-6 medium-6 small-6 columns small-centered text-center">
             I am a <select name="type">
-
                 <option name="select" value="select"> Select</option>
-                <option name="student" value="Student">Student</option>
-                <option name="professor" value="Instructor">Instructor</option>
+                <option name="student" value="student">Student</option>
+                <option name="professor" value="instructor">Instructor</option>
             </select>
+            <p><? echo $select;?></p>
         </div>
         <input type="submit" name="submit" id="btnSubmit" value="Login">
     </form>
