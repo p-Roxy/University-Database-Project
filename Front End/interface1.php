@@ -33,6 +33,8 @@
         <p><input type="submit" name="submit" id="submit" value="find"></p>
         Show the maximum average of Rating grouped by Credits:<br>
         <p><input type="submit" name="nested" id="nested" value="nested"></p>
+        Find courses that is being taken by no one:<br>
+        <p><input type="submit" name="di" id="di" value="di"></p>
         <h6>The table will be shown below:</h6>
     </form>
 
@@ -167,11 +169,16 @@ function printResult($res1) { //prints results from a select statement
 if ($db_conn) {
     $t = $_POST['credits'];
     $int = (int)$t;
-    if ($int == 0){
+
+
+    if (array_key_exists('di', $_POST)){
+        $prof = executePlainSQL("SELECT CourseID FROM Course WHERE NOT EXISTS (SELECT * FROM Takes)");
+    }
+    else{if ($int == 0){
         $prof = executePlainSQL("SELECT CourseID FROM Course");}
     else {
         $prof = executePlainSQL("SELECT CourseID FROM Course WHERE Course.Credits=$int");
-    }
+    }}
     $counter = 0;
     while ($array = OCI_Fetch_Array($prof, OCI_BOTH)) {
         $newarray[$counter] = $array[0];
