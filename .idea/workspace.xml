@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2691468e-241d-4a21-915e-f4cf7d2981da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/interface1.php" afterPath="$PROJECT_DIR$/Front End/interface1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/interface3.php" afterPath="$PROJECT_DIR$/Front End/interface3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/SchoolDB.sql" afterPath="$PROJECT_DIR$/SQL/SchoolDB.sql" />
-    </list>
+    <list default="true" id="2691468e-241d-4a21-915e-f4cf7d2981da" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -366,7 +362,7 @@
       <updated>1490753180234</updated>
       <workItem from="1490753199372" duration="6004000" />
       <workItem from="1490915077043" duration="29241000" />
-      <workItem from="1491010524432" duration="245000" />
+      <workItem from="1491010524432" duration="851000" />
     </task>
     <task id="LOCAL-00001" summary="added php functionality">
       <created>1490942838429</created>
@@ -421,7 +417,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35490000" />
+    <option name="totallyTimeSpent" value="36096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="168" y="117" width="1661" height="844" extended-state="0" />

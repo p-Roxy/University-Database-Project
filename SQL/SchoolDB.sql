@@ -125,13 +125,13 @@ insert into Student values
 insert into Course values
 ('CPSC 322', 'Artificial Intelligence', 3, 11);
 insert into Course values
-('CPSC 310', 'Software Engineering', 3, 11);
+('CPSC 310', 'Software Engineering', 4, 11);
 insert into Course values
-('CPSC 311', 'Definition of Programming Languages', 2, 11);
+('CPSC 311', 'Definition of Programming Languages', 2, 22);
 insert into Course values
-('CPSC 304', 'Relational Databases', 3, 11);
+('CPSC 304', 'Relational Databases', 3, 33);
 insert into Course values
-('CPSC 221', 'Introduction to Algorithms', 3, 11);
+('CPSC 221', 'Introduction to Algorithms', 4, 55);
 
 -- Fees--
 insert into Fees values
