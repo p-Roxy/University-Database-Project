@@ -10,7 +10,9 @@ CREATE TABLE  Course(
 	CourseID 		CHAR(10),
 	cSubject 		CHAR(100),
 	Credits  		INTEGER,
-	PRIMARY KEY (CourseID));
+	profID        Integer not null,
+	PRIMARY KEY (CourseID),
+	FOREIGN key (profid) references professor);
 
 CREATE TABLE Fees(
 	billNum		INTEGER,
@@ -95,6 +97,8 @@ TAID			CHAR(6),
 --Insert instances into tables from part 2--
 --Student--
 insert into Student values
+(000, 'test', 'test', 'test');
+insert into Student values
 (11110011, 'Keyla Hughes', 'khughes', 'c4ts4lyfe');
 insert into Student values
 (11110012, 'Abagail Petersen','aPetersen', 'l0l0l0l0l');
@@ -107,15 +111,15 @@ insert into Student values
 
 --Course--
 insert into Course values
-('CPSC 322', 'Artificial Intelligence', 3);
+('CPSC 322', 'Artificial Intelligence', 3, 11);
 insert into Course values
-('CPSC 310', 'Software Engineering', 3);
+('CPSC 310', 'Software Engineering', 3, 11);
 insert into Course values
-('CPSC 311', 'Definition of Programming Languages', 2);
+('CPSC 311', 'Definition of Programming Languages', 2, 11);
 insert into Course values
-('CPSC 304', 'Relational Databases', 3);
+('CPSC 304', 'Relational Databases', 3, 11);
 insert into Course values
-('CPSC 221', 'Introduction to Algorithms', 3);
+('CPSC 221', 'Introduction to Algorithms', 3, 11);
 
 --Fees--
 insert into Fees values
@@ -200,6 +204,8 @@ insert into Research values
 
 
 --TA--
+insert into TA values
+(000, 'test', 'working', 21.13);
 insert into TA values
 (11110011, 'TA0023', 'Working', 21.13);
 insert into TA values

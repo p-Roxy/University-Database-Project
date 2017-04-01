@@ -1,4 +1,7 @@
+<?php
+session_start(); // Starting Session
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,6 @@
 </head>
 <body>
 <?php
-session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 
 $success = True; //keep track of errors so it redirects the page only if there are no errors
@@ -110,8 +112,9 @@ if ($db_conn) {
                 $success = true;
             }
             if($success == true) {
-                $_SESSION['login_user'] = $username;
-                header("location: taprofile.php");
+                $_SESSION['tauser'] = $username;
+                header("www.ugrad.cs.ubc.ca/~a6g0b");
+                exit();
             } else {
                 $error = 'Invalid login information';
             }
@@ -137,7 +140,7 @@ if ($db_conn) {
         <input type="text" id="code" placeholder="ID" name="profid"/>
         <input type="password" id="password" name="password" placeholder="*****"/>
         <div class="large-6 medium-6 small-6 columns small-centered text-center">
-        <input type="submit" name="submit" id="btnSubmit" value="Login">
+            <input type="submit" name="submit" id="btnSubmit" value="Login">
     </form>
     <p><?php echo $error?></p>
 </div>
