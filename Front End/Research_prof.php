@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Researches</title>
     <link rel="stylesheet" href="css/app.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/login.js" rel="script"></script>
 </head>
 <body>
 <div class="large-12 columns">
