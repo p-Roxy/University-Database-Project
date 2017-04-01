@@ -45,7 +45,7 @@ CREATE TABLE Fees(
 CREATE TABLE Pays(
 	StudentID 		INTEGER,
 	billNum 		INTEGER,
-	amountPaid			REAL,
+	amountPaid			REAL CHECK (amountPaid >= 0),
 	PRIMARY KEY(StudentID, billNum),
 	FOREIGN KEY(StudentID) REFERENCES Student,
 	FOREIGN KEY(billNum) REFERENCES Fees(billNum));
@@ -209,6 +209,12 @@ insert into Takes values
 (11110014, 'CPSC 304');
 insert into Takes values
 (11110015, 'CPSC 221');
+insert into Takes values
+(11110011, 'CPSC 310');
+insert into Takes values
+(11110011, 'CPSC 311');
+insert into Takes values
+(11110011, 'CPSC 304');
 
 -- TA--
 insert into TA values

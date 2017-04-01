@@ -15,6 +15,7 @@
 
 $success = True; //keep track of errors so it redirects the page only if there are no errors
 $db_conn = OCILogon("ora_a6g0b", "a28558147", "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dbhost.ugrad.cs.ubc.ca)(PORT = 1522)))(CONNECT_DATA=(SID=ug)))");
+$username = "khughes";//$_SESSION["login_name"];
 
 function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL command and executes it
 	//echo "<br>running ".$cmdstr."<br>";
@@ -27,6 +28,7 @@ function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL com
 		// connection handle
 		echo htmlentities($e['message']);
 		$success = False;
+		$paymentErr = "Cannot have negative amount paid";
 	}
 
 	$r = OCIExecute($statement, OCI_DEFAULT);
@@ -35,6 +37,7 @@ function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL com
 		$e = oci_error($statement); // For OCIExecute errors pass the statementhandle
 		echo htmlentities($e['message']);
 		$success = False;
+		$paymentErr = "Cannot have negative amount paid";
 	} else {
 
 	}
@@ -57,6 +60,7 @@ function executeBoundSQL($cmdstr, $list) {
 		$e = OCI_Error($db_conn);
 		echo htmlentities($e['message']);
 		$success = False;
+			$paymentErr = "Cannot have negative amount paid";
 	}
 
 	foreach ($list as $tuple) {
@@ -74,6 +78,7 @@ function executeBoundSQL($cmdstr, $list) {
 			echo htmlentities($e['message']);
 			echo "<br>";
 			$success = False;
+			$paymentErr = "Cannot have negative amount paid";
 		}
 	}
 
@@ -100,98 +105,109 @@ function test_input($data) {
 
 // Connect Oracle...
 if ($db_conn) {
-	$username = $_SESSION["login_name"];
+	
+	global $username;
 $res = executePlainSQL("SELECT StudentID, StudentName FROM Student WHERE Username = '$username'");
 $array = oci_fetch_array($res);
 $studentID = (int)$array[0];
 $sname = $array[1];
 
-$res0 = executePlainSQL( "SELECT amountDue, amountPaid, (amountDue-amountPaid) FROM Pays WHERE StudentID =".$studentID);
-$array1 = oci_fetch_array($res0);
-$tuition = $array1[0];
-$amountPaid = $array1[1];
-$amountDue = $array1[2];
+$res1 = executePlainSQL("select sum(f.amountdue) from fees f, takes t, course c where t.studentid = $studentID and c.courseid = t.courseid and f.courseid = t.courseid group by t.studentid");
+$array2 = oci_fetch_array($res1);
+$tuition = $array2[0];
 
-$cardnumErr = $ccvErr = $nameErr = $expErr = $paymentErr = '';
+$res0 = executePlainSQL("SELECT amountPaid from pays where studentid = $studentID");
+$array1 = oci_fetch_array($res0);
+$amountPaid = $array1[0];
+$amountDue = $tuition - $amountPaid;
+
 
 	if (array_key_exists('submit', $_POST)) {
-		
 			if (empty($_POST['cardnum'])) {
 				$cardnumErr = "Invalid card number";
+				$success = False;
 			} else {
 				$cardnum = test_input($_POST['cardnum']);
 				if ($_POST['cardtype'] == 0) {
 					if (!preg_match("/^4[0-9]{12}(?:[0-9]{3})?$/", $cardnum)) {
-						$cardnumErr = "invalid VISA number";
-					}
+						$cardnumErr = "invalid VISA number";			
+						$success = False;
+					} 
 				} else {
 					if (!preg_match("/^5[1-5][0-9]{14}$/", $cardnum)) {
 						$cardnumErr = "invalid MasterCard number";
+						$success = False;
 					}
 				}
+				
 			}
 			if (empty($_POST['name'])){
 				$nameErr = 'Need a name';
+				$success = False;
 			} else {
 				$name = $_POST['name'];
 				if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
 					$nameErr = "Only letters and white space allowed";
+					$success = False;
 				}
 			}
 			if (empty($_POST['exp'])){
 				$expErr = 'Need an expiration date';
+				$success = False;
 			} else {
 				$exp = $_POST['exp'];
 				if (!preg_match("/([0-9]{2})\/([0-9]{2})/",$exp)) {
 					$expErr = "Only numbers and a slash allowed";
+					$success = False;
 				}
 			}
 			if (empty($_POST['ccv'])){
 				$ccvErr = 'Need a CCV';
+				$success = False;
 			} else {
 				$ccv = $_POST['ccv'];
 				if (!preg_match("/[0-9]{3}/",$ccv)) {
 					$ccvErr = "invalid ccv number";
+					$success = False;
 				}
 			}
 			
-			if ($cardnumErr = '' && $ccvErr = '' && $nameErr = '' && $expErr = '' && $paymentErr = '' && ($_POST['payment'] >= 0)) {
+			if ($success) {
 				$tuple = array (
 					":bind1" => $_POST['payment'] + $amountPaid,
-					":bind2" => $amountDue - $_POST['payment'],  
-					":bind3" => $studentID
+					":bind2" => $studentID
 				);
 				$alltuples = array (
 					$tuple
 				);
-				executeBoundSQL("update pays set amountDue=:bind2, amountPaid=:bind1 where studentid=:bind3", $alltuples);
+				executeBoundSQL("update pays set  amountPaid=:bind1 where studentid=:bind2", $alltuples);
+				
+				if ($_POST['payment'] < 0) {
+					$paymentErr = 'Invalid payment';
+				}
+				
+
+			} 
 				OCICommit($db_conn);
-				$res0 = executePlainSQL( "SELECT amountDue, amountPaid, (amountDue-amountPaid) FROM Pays WHERE StudentID =".$studentID);
-$array1 = oci_fetch_array($res0);
-$tuition = $array1[0];
-$amountPaid = $array1[1];
-$amountDue = $array1[2];
-
-			}
-		}
 			
-
-
-	if ($_POST && $success) {
+		}
+		if ($_POST && $success) {
 		//POST-REDIRECT-GET -- See http://en.wikipedia.org/wiki/Post/Redirect/Get
+		$paymentErr ='';
 		header("location: interface3.php");
 	} else {
-		// Select data...
-		$result = executePlainSQL("select * from pays");
+		
 	}
-
-	//Commit to save changes...
-	OCILogoff($db_conn);
 } else {
 	echo "cannot connect";
 	$e = OCI_Error(); // For OCILogon errors pass no handle
 	echo htmlentities($e['message']);
 }
+
+	//Commit to save changes...
+	OCILogoff($db_conn);
+	
+
 
 /* OCILogon() allows you to log onto the Oracle database
      The three arguments are the username, password, and database
@@ -236,9 +252,9 @@ $amountDue = $array1[2];
     </div>
     <div class="large-8, medium-8, small-8 columns">
         <ul>
-            <a href="/~a6g0b/index.html" class="nav"><li>Sign out</li></a>
-            <a href="/~a6g0b/research.php" class="nav"><li>Research</li></a>
-            <a href="/~a6g0b/interface1.php" class="nav"><li>Courses</li></a>
+            <a href="/index.html" class="nav"><li>Sign out</li></a>
+            <a href="/index.html" class="nav"><li>Research</li></a>
+            <a href="/interface1.html" class="nav"><li>Courses</li></a>
         </ul>
     </div>
 </div>

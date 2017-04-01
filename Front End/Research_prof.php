@@ -8,20 +8,35 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+<div class="row nav">
+    <div class="large-4, medium-4, small-4 columns">
+
+        <img src="css/images/g4logo.png" id="nav" alt="School Welcome">
+        <p>Welcome <?php echo $sname;?></p>
+    </div>
+    <div class="large-8, medium-8, small-8 columns">
+        <ul>
+            <li><a href="/index.html" class="nav">Sign out</a></li>
+            <li><a href="/interface3.html" class="nav">Payment</a></li>
+            <li><a href="/interface4.html" class="nav">Research</a></li>
+        </ul>
+    </div>
+</div>
 <div class="large-12 columns">
-    <div class="row  mobile-open" >
-        <div class="large-10 columns text-center">
+    <div class="row" >
+        <div class="large-10 columns text-center small-centered">
             <h1>My Researches</h1>
-            <h2>-----------------------------------------------------------------------</h2>
         </div>
     </div>
-    <body>
-    <table >
+    <div class="row callout">
+        <div class="large-12 columns small-centered">
+            <table >
         <style>
 	
 
 	    table{width:100%;
-    text-align: left;}
+    text-align: left;
+        margin: 0 auto;}
             th{color:blue;   font-size: 140%; font-weight: bold;
     text-align: left; padding: 15px;}
             td{color:black; font-size: 140%; font-weight:bold; 
@@ -41,7 +56,9 @@
 
         </thead>
 	<tbody>
-		
+
+
+
 	<?php
 	$success = True; //keep track of errors so it redirects the page only if there are no errors
 $db_conn = OCILogon("ora_a6g0b", "a28558147", "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dbhost.ugrad.cs.ubc.ca)(PORT = 1522)))(CONNECT_DATA=(SID=ug)))");
@@ -110,17 +127,17 @@ function executeBoundSQL($cmdstr, $list) {
 }
 
 function printResult($res1) { //prints results from a select statement
-	
-	
-	
 
-	while ($array1 = OCI_Fetch_Array($res1, OCI_BOTH)) {
- 	echo "<td>".$array1[0]."</td>";
- 	echo "<td>".$array1[1]."</td>";
- 	echo "<td>".$array1[2]."</td>";
- 	echo "<td>".$array1[3]."</td>";
- 	echo "<td>".$array1[4]."</td>";
-	}
+
+    echo "<table>";
+    while ($array1 = OCI_Fetch_Array($res1, OCI_BOTH)) {
+        echo "<td>".$array1[0]."</td>";
+        echo "<td>".$array1[1]."</td>";
+        echo "<td>".$array1[2]."</td>";
+        echo "<td>".$array1[3]."</td>";
+        echo "<td>".$array1[4]."</td>";
+    }
+    echo "</table>";
 	
 
 }
@@ -130,9 +147,9 @@ if ($db_conn) {
 
 	
 		OCICommit($db_conn);
-	//$username = "gPotts";//$_SESSION["login_name"];
-    //$res = executePlainSQL("SELECT profID FROM Professor WHERE Username = '$username'");
-    //$array = oci_fetch_array($res);
+	$username = "Allan";//$_SESSION["login_name"];
+    $res = executePlainSQL("SELECT profID FROM Professor WHERE Username = '$username'");
+    $array = oci_fetch_array($res);
     $prof = 22;
     //echo $prof;
 	
@@ -145,6 +162,7 @@ if ($db_conn) {
 		$res1 = executePlainSQL("SELECT Research.rID,Research.Thesis, Research.reGrant, Research.labLocation, TA_Helps_Research.TAID FROM Research INNER JOIN TA_Helps_Research ON Research.rID=TA_Helps_Research.rID WHERE Research.profID=".$prof);
 		 
 		 printResult($res1);
+
 }
     
 
@@ -162,7 +180,83 @@ if ($db_conn) {
 
 </tbody>
 </table>
-</body>
+</div>
+    </div>
+</div>
+
+<div class="row  mobile-open" >
+    <div class="large-10 columns text-center">
+        <h1>Ongoing Researches</h1>
+    </div>
+</div>
+<div class="row callout">
+    <div class="large-12 small-centered">
+        <table >
+            <style>
+                table {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                }
+                table{width:100%; border: 2px solid #ddd;
+                    text-align: left;}
+                th{color:blue;   font-size: 140%; font-weight: bold;border: 1px solid #ddd;
+                    text-align: left; padding: 15px;}
+                td{color:black; font-size: 140%; font-weight:bold; border: 1px solid #ddd;
+                    text-align: center; padding: 10px;}
+            </style>
+            <thead>
+
+
+            <th>Research ID	</th>
+            <th>Professor ID	</th>
+            <th>Thesis		</th>
+            <th>University Grant</th>
+            <th>Location	</th>
+
+
+
+            </thead>
+            <tbody>
+
+            <?php
+            $success = True; //keep track of errors so it redirects the page only if there are no errors
+            $db_conn = OCILogon("ora_a6g0b", "a28558147", "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dbhost.ugrad.cs.ubc.ca)(PORT = 1522)))(CONNECT_DATA=(SID=ug)))");
+
+            // Connect Oracle...
+            if ($db_conn) {
+                OCICommit($db_conn);
+                if ($_POST && $success) {
+                    //POST-REDIRECT-GET -- See http://en.wikipedia.org/wiki/Post/Redirect/Get
+                    header("location: research.php");
+                } else {
+                    // Select data...
+                    $prof = executePlainSQL("SELECT profID FROM Research");
+                    $counter=0;
+                    while ($array = OCI_Fetch_Array($prof, OCI_BOTH)) {
+                        $newarray[$counter]= $array[0];
+                        $counter=$counter+1;
+                    }
+                    $i=0;
+                    while($counter>0)
+                    {   $num = $newarray[$i];
+                        $res1 = executePlainSQL("SELECT * FROM Research WHERE Research.profID=".$num);
+                        printResult($res1);
+                        $counter=$counter-1;
+                        $i=$i+1;
+                    }
+                }
+                //Commit to save changes...
+                OCILogoff($db_conn);
+            } else {
+                echo "cannot connect";
+                $e = OCI_Error(); // For OCILogon errors pass no handle
+                echo htmlentities($e['message']);
+            }
+            ?>
+
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>
