@@ -118,6 +118,18 @@ insert into Student values
 insert into Student values
 (11110015, 'Charlotte Vang', 'cVang', 'f9ewjg09');
 
+-- Professor--
+insert into Professor values
+(11, 'Allan', 'ICCS 241', 4, 'Allan', 'Allanb0mb');
+insert into Professor values
+(22, 'Bill', 'ICCS 320', 3, 'Bill' , '1PnchM4n');
+insert into Professor values
+(33, 'Claire', 'ICCS 220', 7, 'Claire', 'Br4nchB0und');
+insert into Professor values
+(44, 'Eric', 'ICCS 110', 5, 'Eric', 'R0ckstr7');
+insert into Professor values
+(55, 'Fred', 'ICCS 310', 9, 'Fred', 'ImaLmb3rj4k');
+
 -- Course--
 insert into Course values
 ('CPSC 322', 'Artificial Intelligence', 3, 11);
@@ -174,31 +186,6 @@ insert into Schedules_Room values
 insert into Schedules_Room values
 ('ICCS330', 'CPSC 221', 'MWF', 30, '2pm - 3pm', 'Lab');
 
-
--- Takes--
-insert into Takes values
-(11110011, 'CPSC 322');
-insert into Takes values
-(11110012, 'CPSC 310');
-insert into Takes values
-(11110013, 'CPSC 311');
-insert into Takes values
-(11110014, 'CPSC 304');
-insert into Takes values
-(11110015, 'CPSC 221');
-
--- Professor--
-insert into Professor values
-(11, 'Allan', 'ICCS 241', 4, 'Allan', 'Allanb0mb');
-insert into Professor values
-(22, 'Bill', 'ICCS 320', 3, 'Bill' , '1PnchM4n');
-insert into Professor values
-(33, 'Claire', 'ICCS 220', 7, 'Claire', 'Br4nchB0und');
-insert into Professor values
-(44, 'Eric', 'ICCS 110', 5, 'Eric', 'R0ckstr7');
-insert into Professor values
-(55, 'Fred', 'ICCS 310', 9, 'Fred', 'ImaLmb3rj4k');
-
 -- Research--
 insert into Research values
 ('RE0012', 11, 'Math', 5000.00, 'buch101');
@@ -211,6 +198,17 @@ insert into Research values
 insert into Research values
 ('RE0016', 55, 'astronomy', 1500.00, 'henn300');
 
+-- Takes--
+insert into Takes values
+(11110011, 'CPSC 322');
+insert into Takes values
+(11110012, 'CPSC 310');
+insert into Takes values
+(11110013, 'CPSC 311');
+insert into Takes values
+(11110014, 'CPSC 304');
+insert into Takes values
+(11110015, 'CPSC 221');
 
 -- TA--
 insert into TA values
