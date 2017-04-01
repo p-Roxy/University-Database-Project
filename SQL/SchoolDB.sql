@@ -1,16 +1,27 @@
--- noinspection SqlNoDataSourceInspectionForFile
+DROP TABLE Student cascade;
+DROP TABLE Course cascade;
+DROP TABLE Fees cascade;
+DROP TABLE Pays cascade;
+DROP TABLE Schedules_Room cascade;
+DROP TABLE Takes cascade;
+DROP TABLE Professor cascade;
+DROP TABLE Research cascade;
+DROP TABLE TA cascade;
+DROP TABLE TAs_Course cascade;
+DROP TABLE TA_Helps_Research cascade;
+
 CREATE TABLE Student(
-StudentID 		INTEGER,
-StudentName 	CHAR(80),
-UserName        CHAR(80),
-Password        CHAR(80),
-PRIMARY KEY (StudentID));
+	StudentID 		INTEGER,
+	StudentName 	CHAR(80),
+	UserName        CHAR(80),
+	Password        CHAR(80),
+	PRIMARY KEY (StudentID));
 
 CREATE TABLE  Course(
 	CourseID 		CHAR(10),
 	cSubject 		CHAR(100),
 	Credits  		INTEGER,
-	profID        Integer not null,
+	profID        	INTEGER not null,
 	PRIMARY KEY (CourseID),
 	FOREIGN key (profid) references professor);
 
@@ -25,9 +36,8 @@ CREATE TABLE Fees(
 CREATE TABLE Pays(
 	StudentID 		INTEGER,
 	billNum 		INTEGER,
-	amountDue			REAL,
 	amountPaid			REAL,
-	PRIMARY KEY(StudentID, amountDue, billNum),
+	PRIMARY KEY(StudentID, billNum),
 	FOREIGN KEY(StudentID) REFERENCES Student,
 	FOREIGN KEY(billNum) REFERENCES Fees(billNum));
 
@@ -40,7 +50,7 @@ CREATE TABLE  Schedules_Room(
 	timeSlot		CHAR(20),
 	roomtype		CHAR(80),
 	PRIMARY KEY(roomID, courseID),
-	FOREIGN KEY(CourseID) REFERENCES Course)
+	FOREIGN KEY(CourseID) REFERENCES Course);
 
 CREATE TABLE  Takes(
 StudentID		INTEGER,
@@ -94,10 +104,12 @@ TAID			CHAR(6),
 	FOREIGN KEY (TAID) references TA);
 
 
---Insert instances into tables from part 2--
---Student--
+-- Insert instances into tables from part 2--
+-- Student--
 insert into Student values
 (000, 'test', 'test', 'test');
+insert into Student values
+(11110010, 'Bill Lee', 'blee', 'b33skn33s');
 insert into Student values
 (11110011, 'Keyla Hughes', 'khughes', 'c4ts4lyfe');
 insert into Student values
@@ -109,7 +121,7 @@ insert into Student values
 insert into Student values
 (11110015, 'Charlotte Vang', 'cVang', 'f9ewjg09');
 
---Course--
+-- Course--
 insert into Course values
 ('CPSC 322', 'Artificial Intelligence', 3, 11);
 insert into Course values
@@ -121,7 +133,7 @@ insert into Course values
 insert into Course values
 ('CPSC 221', 'Introduction to Algorithms', 3, 11);
 
---Fees--
+-- Fees--
 insert into Fees values
 (7681, 'CPSC 322', 568.91);
 insert into Fees values
@@ -141,19 +153,19 @@ insert into Fees values
  'CPSC 221',
  487.25);
 
---Pays--
+-- Pays--
 insert into Pays values
-(11110011, 7681, 568.91, 0);
+(11110011, 7681, 0);
 insert into Pays values
-(11110012, 7833,  620.51, 0);
+(11110012, 7833, 0);
 insert into Pays values
-(11110013, 7688, 123.25, 0);
+(11110013, 7688, 0);
 insert into Pays values
-(11110014, 7767, 456.72, 0);
+(11110014, 7767, 0);
 insert into Pays values
-(11110015, 8765, 487.25, 0);
+(11110015, 8765, 0);
 
---Schedules Rooms--
+-- Schedules Rooms--
 insert into Schedules_Room values
 ('HDP110', 'CPSC 322', 'MWF', 200, '11am - 12pm', 'Lecture Hall');
 insert into Schedules_Room values
@@ -166,7 +178,7 @@ insert into Schedules_Room values
 ('ICCS330', 'CPSC 221', 'MWF', 30, '2pm - 3pm', 'Lab');
 
 
---Takes--
+-- Takes--
 insert into Takes values
 (11110011, 'CPSC 322');
 insert into Takes values
@@ -178,7 +190,7 @@ insert into Takes values
 insert into Takes values
 (11110015, 'CPSC 221');
 
---Professor--
+-- Professor--
 insert into Professor values
 (11, 'Allan', 'ICCS 241', 4, 'Allan', 'Allanb0mb');
 insert into Professor values
@@ -190,7 +202,7 @@ insert into Professor values
 insert into Professor values
 (55, 'Fred', 'ICCS 310', 9, 'Fred', 'ImaLmb3rj4k');
 
---Research--
+-- Research--
 insert into Research values
 ('RE0012', 11, 'Math', 5000.00, 'buch101');
 insert into Research values
@@ -203,7 +215,7 @@ insert into Research values
 ('RE0016', 55, 'astronomy', 1500.00, 'henn300');
 
 
---TA--
+-- TA--
 insert into TA values
 (000, 'test', 'working', 21.13);
 insert into TA values
@@ -217,7 +229,7 @@ insert into TA values
 insert into TA values
 (11110015, 'TA0058', 'Not Working', 0);
 
---TAs Course--
+-- TAs Course--
 insert into TAs_Course values
 ('TA0023', 'CPSC 322', 'Wed 8am-4pm');
 insert into TAs_Course values
@@ -230,7 +242,7 @@ insert into TAs_Course values
 ('TA0058', 'CPSC 221', 'Fri  6pm - 10pm');
 
 
---TA Helps Research--
+-- TA Helps Research--
 insert into TA_Helps_Research values
 ('TA0023', 'RE0012', 11);
 insert into TA_Helps_Research values

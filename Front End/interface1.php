@@ -156,9 +156,9 @@ if ($db_conn) {
     </div>
     <div class="large-8, medium-8, small-8 columns">
         <ul>
-            <li><a href="/index.html" class="nav">Sign out</a></li>
-            <li><a href="/interface3.html" class="nav">Payment</a></li>
-            <li><a href="/interface4.html" class="nav">Research</a></li>
+            <li><a href="/~a6g0b/index.html" class="nav">Sign out</a></li>
+            <li><a href="/~a6g0b/interface3.php" class="nav">Payment</a></li>
+            <li><a href="/~a6g0b/research.php" class="nav">Research</a></li>
         </ul>
     </div>
 </div>

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2691468e-241d-4a21-915e-f4cf7d2981da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/talogin.php" afterPath="$PROJECT_DIR$/Front End/talogin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/interface1.php" afterPath="$PROJECT_DIR$/Front End/interface1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front End/interface3.php" afterPath="$PROJECT_DIR$/Front End/interface3.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/SchoolDB.sql" afterPath="$PROJECT_DIR$/SQL/SchoolDB.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +32,9 @@
       <file leaf-file-name="talogin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/talogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
+            <state relative-caret-position="2516">
               <caret line="148" column="7" lean-forward="false" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
-              <folding>
-                <marker date="1491008246204" expanded="true" signature="4004:4110" ph="select * fro... ta" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -44,21 +42,18 @@
       <file leaf-file-name="plogin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/plogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="1989">
               <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
-              <folding>
-                <marker date="1491004728426" expanded="true" signature="3994:4081" ph="select * fro... ${$select}" />
-                <marker date="1491004728426" expanded="true" signature="3994:4088" ph="select * fro... ${$select}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SchoolDB.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SchoolDB.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SQL/SchoolDB.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="121" selection-end-column="50" />
+            <state relative-caret-position="141">
+              <caret line="103" column="38" lean-forward="true" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -68,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/Front End/register.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+              <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -79,9 +74,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="464">
               <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-              <folding>
-                <marker date="1491004728595" expanded="true" signature="3978:4051" ph="select * fro... ${$select}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,15 +82,9 @@
       <file leaf-file-name="pprofile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/pprofile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="186" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-              <folding>
-                <marker date="1491004728495" expanded="true" signature="3434:3505" ph="SELECT Stude... Student" />
-                <marker date="1491004728495" expanded="true" signature="3633:3713" ph="SELECT amoun... Pays" />
-                <marker date="1491004728495" expanded="true" signature="5752:5826" ph="update pays " />
-                <marker date="1491004728495" expanded="true" signature="5913:5993" ph="SELECT amoun... Pays" />
-                <marker date="1491004728495" expanded="true" signature="6414:6432" ph="select * fro... pays" />
-              </folding>
+            <state relative-caret-position="121">
+              <caret line="162" column="34" lean-forward="true" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,8 +92,8 @@
       <file leaf-file-name="interface4.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/interface4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="85">
+              <caret line="5" column="71" lean-forward="false" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -115,18 +102,18 @@
       <file leaf-file-name="interface3.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front End/interface3.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="114" column="62" lean-forward="false" selection-start-line="114" selection-start-column="62" selection-end-line="114" selection-end-column="62" />
+            <state relative-caret-position="209">
+              <caret line="239" column="41" lean-forward="false" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interface1.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="interface1.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Front End/interface1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+            <state relative-caret-position="192">
+              <caret line="160" column="45" lean-forward="false" selection-start-line="160" selection-start-column="45" selection-end-line="160" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -154,6 +141,8 @@
       <find>large-6</find>
       <find>h1</find>
       <find>submit</find>
+      <find>.php</find>
+      <find>.html</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,13 +163,13 @@
         <option value="$PROJECT_DIR$/sprofile.php" />
         <option value="$PROJECT_DIR$/Front End/pprofile.php" />
         <option value="$PROJECT_DIR$/Front End/interface1.html" />
-        <option value="$PROJECT_DIR$/Front End/interface3.php" />
-        <option value="$PROJECT_DIR$/Front End/interface1.php" />
         <option value="$PROJECT_DIR$/Front End/login.php" />
         <option value="$PROJECT_DIR$/Front End/plogin.php" />
         <option value="$PROJECT_DIR$/Front End/index.html" />
         <option value="$PROJECT_DIR$/Front End/talogin.php" />
         <option value="$PROJECT_DIR$/SQL/SchoolDB.sql" />
+        <option value="$PROJECT_DIR$/Front End/interface3.php" />
+        <option value="$PROJECT_DIR$/Front End/interface1.php" />
       </list>
     </option>
   </component>
@@ -192,10 +181,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="Remote PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1942" />
-    <option name="height" value="1042" />
+    <option name="x" value="168" />
+    <option name="y" value="117" />
+    <option name="width" value="1661" />
+    <option name="height" value="844" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -212,7 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,6 +261,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -284,6 +273,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="settings.editor.splitter.proportion" value="0.25974026" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -305,15 +295,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.University-Database-Project">
+  <component name="RunManager">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/University-Database-Project/Front End/index.html">
       <method />
     </configuration>
     <configuration default="false" name="interface3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/University-Database-Project/Front End/interface3.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="University-Database-Project" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
@@ -326,21 +312,6 @@
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -372,16 +343,14 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="3">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.interface3.html" />
-      <item index="2" class="java.lang.String" itemvalue="PHPUnit.University-Database-Project" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="PHPUnit.University-Database-Project" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.interface3.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.interface3.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -397,6 +366,7 @@
       <updated>1490753180234</updated>
       <workItem from="1490753199372" duration="6004000" />
       <workItem from="1490915077043" duration="29241000" />
+      <workItem from="1491010524432" duration="245000" />
     </task>
     <task id="LOCAL-00001" summary="added php functionality">
       <created>1490942838429</created>
@@ -451,28 +421,32 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35245000" />
+    <option name="totallyTimeSpent" value="35490000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="false" />
+    <frame x="168" y="117" width="1661" height="844" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2495379" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.49791667" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.069634706" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06891702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37100455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -517,6 +491,86 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Front End/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/talogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="148" column="7" lean-forward="false" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/plogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1989">
+          <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/SchoolDB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/slogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/pprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3162">
+          <caret line="186" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/interface4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/interface3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="114" column="62" lean-forward="false" selection-start-line="114" selection-start-column="62" selection-end-line="114" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/interface1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
           <caret line="68" column="7" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="68" selection-end-column="7" />
           <folding />
@@ -532,49 +586,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Front End/interface3.html" />
-    <entry file="file://$PROJECT_DIR$/dump">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <marker date="1490932528856" expanded="true" signature="249:307" ph="SELECT Stude... Student" />
-            <marker date="1490932528856" expanded="true" signature="343:388" ph="SELECT amoun... Pays" />
-            <marker date="1490932528856" expanded="true" signature="437:483" ph="SELECT amoun... Pays" />
-            <marker date="1490932528856" expanded="true" signature="530:590" ph="SELECT (amou... Pays" />
-            <marker date="1490932528856" expanded="true" signature="2090:2146" ph="UPDATE Pays " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dump" />
     <entry file="file://$PROJECT_DIR$/oracle-test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
           <caret line="153" column="14" lean-forward="true" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
-          <folding>
-            <marker date="1490915071968" expanded="true" signature="5013:5028" ph="Drop table t... " />
-            <marker date="1490915071968" expanded="true" signature="5116:5184" ph="create table... tab1" />
-            <marker date="1490915071968" expanded="true" signature="5489:5529" ph="insert into tab1... " />
-            <marker date="1490915071968" expanded="true" signature="5835:5880" ph="update tab1 " />
-            <marker date="1490915071968" expanded="true" signature="6035:6072" ph="insert into tab1... " />
-            <marker date="1490915071968" expanded="true" signature="6364:6404" ph="insert into tab1... " />
-            <marker date="1490915071968" expanded="true" signature="6853:6871" ph="select * fro... tab1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/payment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="227" column="0" lean-forward="true" selection-start-line="227" selection-start-column="0" selection-end-line="239" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/payment.php" />
     <entry file="file://$PROJECT_DIR$/Front End/loginHelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -586,78 +611,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/sprofile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/interface4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/sprofile.html" />
     <entry file="file://$PROJECT_DIR$/Front End/research.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/interface1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/pprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="186" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding>
-            <marker date="1491004728495" expanded="true" signature="3434:3505" ph="SELECT Stude... Student" />
-            <marker date="1491004728495" expanded="true" signature="3633:3713" ph="SELECT amoun... Pays" />
-            <marker date="1491004728495" expanded="true" signature="5752:5826" ph="update pays " />
-            <marker date="1491004728495" expanded="true" signature="5913:5993" ph="SELECT amoun... Pays" />
-            <marker date="1491004728495" expanded="true" signature="6414:6432" ph="select * fro... pays" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/slogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding>
-            <marker date="1491004728595" expanded="true" signature="3978:4051" ph="select * fro... ${$select}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/interface3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="114" column="62" lean-forward="false" selection-start-line="114" selection-start-column="62" selection-end-line="114" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Front End/plogin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="1989">
           <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
-          <folding>
-            <marker date="1491004728426" expanded="true" signature="3994:4081" ph="select * fro... ${$select}" />
-            <marker date="1491004728426" expanded="true" signature="3994:4088" ph="select * fro... ${$select}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -669,28 +635,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front End/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front End/talogin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
+        <state relative-caret-position="2516">
           <caret line="148" column="7" lean-forward="false" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
-          <folding>
-            <marker date="1491008246204" expanded="true" signature="4004:4110" ph="select * fro... ta" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SQL/SchoolDB.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="121" selection-end-column="50" />
+        <state relative-caret-position="141">
+          <caret line="103" column="38" lean-forward="true" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/slogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/pprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="162" column="34" lean-forward="true" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/interface4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="71" lean-forward="false" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/interface3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="239" column="41" lean-forward="false" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front End/interface1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="160" column="45" lean-forward="false" selection-start-line="160" selection-start-column="45" selection-end-line="160" selection-end-column="45" />
           <folding />
         </state>
       </provider>
