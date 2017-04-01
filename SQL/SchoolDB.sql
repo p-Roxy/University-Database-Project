@@ -1,14 +1,14 @@
-DROP TABLE TAs_Course cascade;
-DROP TABLE TA cascade;
-DROP TABLE Takes cascade;
-DROP TABLE TA_Helps_Research cascade;
-DROP TABLE Research cascade;
-DROP TABLE Schedules_Room cascade;
-DROP TABLE Pays cascade;
-DROP TABLE Fees cascade;
-DROP TABLE Professor cascade;
-DROP TABLE Course cascade;
-DROP TABLE Student cascade;
+DROP TABLE TA_Helps_Research;
+DROP TABLE TAs_Course;
+DROP TABLE TA;
+DROP TABLE Takes;
+DROP TABLE Research;
+DROP TABLE Schedules_Room;
+DROP TABLE Pays;
+DROP TABLE Fees;
+DROP TABLE Professor;
+DROP TABLE Course;
+DROP TABLE Student;
 
 CREATE TABLE Student(
 	StudentID 		INTEGER,
@@ -70,14 +70,6 @@ CREATE TABLE Research(
 FOREIGN KEY(profID) REFERENCES Professor
 ON DELETE CASCADE);
 
-CREATE TABLE TA_Helps_Research(
-TAID			CHAR(6),
-	rID			CHAR(6),
-	profID		INTEGER,
-	PRIMARY KEY (rID, profID),
-	FOREIGN KEY (rID, profID) REFERENCES Research,
-	FOREIGN KEY (TAID) references TA);
-
 CREATE TABLE  Takes(
 StudentID		INTEGER,
 CourseID		CHAR(10),
@@ -101,6 +93,14 @@ CREATE TABLE TAs_Course(
 	PRIMARY KEY (CourseID),
 	FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
 	FOREIGN KEY (TAID) references TA(TAID));
+    
+CREATE TABLE TA_Helps_Research(
+TAID			CHAR(6),
+	rID			CHAR(6),
+	profID		INTEGER,
+	PRIMARY KEY (rID, profID),
+	FOREIGN KEY (rID, profID) REFERENCES Research,
+	FOREIGN KEY (TAID) references TA);
 
 -- Insert instances into tables from part 2--
 -- Student--
