@@ -215,6 +215,13 @@ insert into Takes values
 (11110011, 'CPSC 311');
 insert into Takes values
 (11110011, 'CPSC 304');
+-- all students taking 304 --
+insert into Takes values
+(11110012, 'CPSC 304');
+insert into Takes values
+(11110013, 'CPSC 304');
+insert into Takes values
+(11110015, 'CPSC 304');
 
 -- TA--
 insert into TA values

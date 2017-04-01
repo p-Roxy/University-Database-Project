@@ -31,6 +31,8 @@
 
         <p><input type="text" name="credits" size="6"></p>
         <p><input type="submit" name="submit" id="submit" value="find"></p>
+        Show the maximum average of Rating grouped by Credits:<br>
+        <p><input type="submit" name="nested" id="nested" value="nested"></p>
         <h6>The table will be shown below:</h6>
     </form>
 
@@ -178,6 +180,33 @@ if ($db_conn) {
     }
     if ($counter == 0){
         echo "No courses found!";
+    }
+    if (array_key_exists('nested', $_POST)){
+        echo array_key_exists('submit');
+        $i=0;
+
+        while($counter>0)
+        {   $num = $newarray[$i];
+            $res1 = executePlainSQL("SELECT MAX(AvgRating)
+FROM (SELECT AVG(t.Rating) AS AvgRating,c.Credits
+FROM Course c LEFT OUTER JOIN Professor t ON t.profID = c.profID
+ GROUP BY c.Credits)");
+            printResult($res1);
+            $counter=$counter-1;
+            $i=$i+1;
+        }
+
+        OCICommit($db_conn);
+//            ("SELECT *
+//FROM (SELECT AVG(t.Rating) AS AvgRating,c.Credits
+//FROM Course c LEFT OUTER JOIN Professor t ON t.profID = c.profID
+// GROUP BY c.Credits) AS T");
+//            ("SELECT Temp.CourseID, Temp.cSubject, Temp.cSubject, Temp.Credits, Temp.profID, Temp.profName,Temp.officeLocation,MAX(Temp.AvgRating)
+//FROM (SELECT c.CourseID, c.cSubject,c.Credits,t.profID,t.profName,t.officeLocation, AVG(t.Rating) AS AvgRating FROM Course c LEFT OUTER JOIN Professor t ON t.profID = c.profID
+// GROUP BY c.Credits) AS Temp
+//WHERE Temp.CourseID='$num'");
+
+        OCICommit($db_conn);
     }
 
     if (array_key_exists('submit', $_POST)){
