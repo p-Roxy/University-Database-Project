@@ -1,14 +1,14 @@
-DROP TABLE Student cascade;
-DROP TABLE Course cascade;
-DROP TABLE Fees cascade;
-DROP TABLE Pays cascade;
-DROP TABLE Schedules_Room cascade;
-DROP TABLE Takes cascade;
-DROP TABLE Professor cascade;
-DROP TABLE Research cascade;
-DROP TABLE TA cascade;
 DROP TABLE TAs_Course cascade;
+DROP TABLE TA cascade;
+DROP TABLE Takes cascade;
 DROP TABLE TA_Helps_Research cascade;
+DROP TABLE Research cascade;
+DROP TABLE Schedules_Room cascade;
+DROP TABLE Pays cascade;
+DROP TABLE Fees cascade;
+DROP TABLE Professor cascade;
+DROP TABLE Course cascade;
+DROP TABLE Student cascade;
 
 CREATE TABLE Student(
 	StudentID 		INTEGER,
@@ -25,6 +25,15 @@ CREATE TABLE  Course(
 	PRIMARY KEY (CourseID),
 	FOREIGN key (profid) references professor);
 
+CREATE TABLE Professor(
+    profID		INTEGER,
+	profName		CHAR(20),
+	officeLocation	CHAR(20),
+	Rating		INTEGER,
+UserName        CHAR(80),
+	Password		CHAR(20),
+	PRIMARY KEY(profID));
+    
 CREATE TABLE Fees(
 	billNum		INTEGER,
 	CourseID		CHAR(10) NOT NULL,
@@ -41,7 +50,6 @@ CREATE TABLE Pays(
 	FOREIGN KEY(StudentID) REFERENCES Student,
 	FOREIGN KEY(billNum) REFERENCES Fees(billNum));
 
-
 CREATE TABLE  Schedules_Room(
 	roomID			CHAR(10),
 	CourseID		CHAR(10),
@@ -52,22 +60,6 @@ CREATE TABLE  Schedules_Room(
 	PRIMARY KEY(roomID, courseID),
 	FOREIGN KEY(CourseID) REFERENCES Course);
 
-CREATE TABLE  Takes(
-StudentID		INTEGER,
-CourseID		CHAR(10),
-PRIMARY KEY(StudentID, CourseID),
-FOREIGN KEY(StudentID) references Student,
-FOREIGN KEY(CourseID) references Course);
-
-CREATE TABLE Professor(
-    profID		INTEGER,
-	profName		CHAR(20),
-	officeLocation	CHAR(20),
-	Rating		INTEGER,
-UserName        CHAR(80),
-	Password		CHAR(20),
-	PRIMARY KEY(profID));
-
 CREATE TABLE Research(
     rID			CHAR(6),
 	profID		INTEGER NOT NULL,
@@ -77,6 +69,21 @@ CREATE TABLE Research(
 	PRIMARY KEY(rID, profID),
 FOREIGN KEY(profID) REFERENCES Professor
 ON DELETE CASCADE);
+
+CREATE TABLE TA_Helps_Research(
+TAID			CHAR(6),
+	rID			CHAR(6),
+	profID		INTEGER,
+	PRIMARY KEY (rID, profID),
+	FOREIGN KEY (rID, profID) REFERENCES Research,
+	FOREIGN KEY (TAID) references TA);
+
+CREATE TABLE  Takes(
+StudentID		INTEGER,
+CourseID		CHAR(10),
+PRIMARY KEY(StudentID, CourseID),
+FOREIGN KEY(StudentID) references Student,
+FOREIGN KEY(CourseID) references Course);
 
 CREATE TABLE TA(
 	StudentID	INTEGER,
@@ -94,15 +101,6 @@ CREATE TABLE TAs_Course(
 	PRIMARY KEY (CourseID),
 	FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
 	FOREIGN KEY (TAID) references TA(TAID));
-
-CREATE TABLE TA_Helps_Research(
-TAID			CHAR(6),
-	rID			CHAR(6),
-	profID		INTEGER,
-	PRIMARY KEY (rID, profID),
-	FOREIGN KEY (rID, profID) REFERENCES Research,
-	FOREIGN KEY (TAID) references TA);
-
 
 -- Insert instances into tables from part 2--
 -- Student--
