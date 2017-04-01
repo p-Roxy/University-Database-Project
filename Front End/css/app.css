@@ -150,8 +150,7 @@ html [type="button"],
     outline: 1px dotted ButtonText; }
 
 
-[type='submit'],
-[type='button'] {
+[type='submit'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   display: block;
