@@ -6,8 +6,8 @@ DROP TABLE Research;
 DROP TABLE Schedules_Room;
 DROP TABLE Pays;
 DROP TABLE Fees;
-DROP TABLE Professor;
 DROP TABLE Course;
+DROP TABLE Professor;
 DROP TABLE Student;
 
 CREATE TABLE Student(
