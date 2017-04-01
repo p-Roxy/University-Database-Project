@@ -173,6 +173,10 @@ $amountDue = $tuition - $amountPaid;
 			}
 			
 			if ($success) {
+                if ($_POST['payment'] < 0) {
+                    $paymentErr = 'Invalid payment';
+                }
+
 				$tuple = array (
 					":bind1" => $_POST['payment'] + $amountPaid,
 					":bind2" => $studentID
@@ -182,9 +186,7 @@ $amountDue = $tuition - $amountPaid;
 				);
 				executeBoundSQL("update pays set  amountPaid=:bind1 where studentid=:bind2", $alltuples);
 				
-				if ($_POST['payment'] < 0) {
-					$paymentErr = 'Invalid payment';
-				}
+
 				
 
 			} 

@@ -38,9 +38,9 @@
     text-align: left;
         margin: 0 auto;}
             th{color:blue;   font-size: 140%; font-weight: bold;
-    text-align: left; padding: 15px;}
+    text-align: left; padding: 15px; width: auto;}
             td{color:black; font-size: 140%; font-weight:bold; 
-    text-align: left; padding: 10px;}
+    text-align: left; padding: 10px; width: inherit; }
 
         </style>
         <thead>
@@ -129,49 +129,66 @@ function executeBoundSQL($cmdstr, $list) {
 function printResult($res1) { //prints results from a select statement
 
 
-    echo "<table>";
-    while ($array1 = OCI_Fetch_Array($res1, OCI_BOTH)) {
-        echo "<td>".$array1[0]."</td>";
-        echo "<td>".$array1[1]."</td>";
-        echo "<td>".$array1[2]."</td>";
-        echo "<td>".$array1[3]."</td>";
-        echo "<td>".$array1[4]."</td>";
-    }
-    echo "</table>";
-	
+        echo "<table>";
+        while ($array1 = OCI_Fetch_Array($res1, OCI_BOTH)) {
+            echo "<td>".$array1[0]."</td>";
+            echo "<td>".$array1[1]."</td>";
+            echo "<td>".$array1[2]."</td>";
+            echo "<td>".$array1[3]."</td>";
+            echo "<td>".$array1[4]. "</td>";
+        }
+        echo "</table>";
 
-}
+
+    }
+
 
 // Connect Oracle...
 if ($db_conn) {
 
-	
-		OCICommit($db_conn);
-	$username = "Allan";//$_SESSION["login_name"];
+
+    OCICommit($db_conn);
+    $username = "Allan";//$_SESSION["login_name"];
     $res = executePlainSQL("SELECT profID FROM Professor WHERE Username = '$username'");
     $array = oci_fetch_array($res);
     $prof = 22;
     //echo $prof;
-	
+    $ta = oci_fetch_array($res1);
 
-	if ($_POST && $success) {
-		//POST-REDIRECT-GET -- See http://en.wikipedia.org/wiki/Post/Redirect/Get
-		header("location: research.php");
-	} else {
-		// Join data...
-		$res1 = executePlainSQL("SELECT Research.rID,Research.Thesis, Research.reGrant, Research.labLocation, TA_Helps_Research.TAID FROM Research INNER JOIN TA_Helps_Research ON Research.rID=TA_Helps_Research.rID WHERE Research.profID=".$prof);
-		 
-		 printResult($res1);
+    if (array_key_exists('submit', $_POST)) {
+        // Insert data into table...
+//        // Inserting data into table using bound variables
+//        $list1 = array (
+//            ":bind1" => $ta,
+//        );
+//        $allrows = array (
+//            $list1
+//        );
+        //executeBoundSQL("insert into tab1 values (:bind1, :bind2)", $allrows); //the function takes a list of lists
+        // Update data...
+        //executePlainSQL("update tab1 set nid=10 where nid=2");
+        // Delete data...
+        executePlainSQL("delete from TA_Helps_Research where taid='$ta'");
+        echo 'delete complete';
+        OCICommit($db_conn);
+    }
 
+    if ($_POST && $success) {
+        //POST-REDIRECT-GET -- See http://en.wikipedia.org/wiki/Post/Redirect/Get
+        echo 'delete complete';
+        header("location: Research_prof.php");
+    } else {
+        // Join data...
+        $res1 = executePlainSQL("SELECT r.rID, r.Thesis, r.reGrant, r.labLocation, t.TAID FROM Research r INNER JOIN TA_Helps_Research t ON r.rID=t.rID WHERE r.profID=$prof");
+
+        printResult($res1);
+    }
+
+
+    //Commit to save changes...
+    OCILogoff($db_conn);
 }
-    
-
-    
-	
-
-	//Commit to save changes...
-	OCILogoff($db_conn);
-} else {
+ else {
 	echo "cannot connect";
 	$e = OCI_Error(); // For OCILogon errors pass no handle
 	echo htmlentities($e['message']);
@@ -180,6 +197,9 @@ if ($db_conn) {
 
 </tbody>
 </table>
+            <form action='Research_prof.php' method = 'post' style='display: inline; margin: 3px 0;'>
+                <input type='submit' name='submit' value='Remove TA' >
+            </form>
 </div>
     </div>
 </div>
@@ -227,7 +247,7 @@ if ($db_conn) {
                 OCICommit($db_conn);
                 if ($_POST && $success) {
                     //POST-REDIRECT-GET -- See http://en.wikipedia.org/wiki/Post/Redirect/Get
-                    header("location: research.php");
+                    header("location: Research_prof.php");
                 } else {
                     // Select data...
                     $prof = executePlainSQL("SELECT profID FROM Research");
