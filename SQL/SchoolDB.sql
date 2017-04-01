@@ -17,6 +17,15 @@ CREATE TABLE Student(
 	Password        CHAR(80),
 	PRIMARY KEY (StudentID));
 
+CREATE TABLE Professor(
+    profID		INTEGER,
+	profName		CHAR(20),
+	officeLocation	CHAR(20),
+	Rating		INTEGER,
+	UserName        CHAR(80),
+	Password		CHAR(20),
+	PRIMARY KEY(profID));
+
 CREATE TABLE  Course(
 	CourseID 		CHAR(10),
 	cSubject 		CHAR(100),
@@ -24,15 +33,6 @@ CREATE TABLE  Course(
 	profID        	INTEGER not null,
 	PRIMARY KEY (CourseID),
 	FOREIGN key (profid) references professor);
-
-CREATE TABLE Professor(
-    profID		INTEGER,
-	profName		CHAR(20),
-	officeLocation	CHAR(20),
-	Rating		INTEGER,
-UserName        CHAR(80),
-	Password		CHAR(20),
-	PRIMARY KEY(profID));
     
 CREATE TABLE Fees(
 	billNum		INTEGER,
@@ -84,7 +84,6 @@ CREATE TABLE TA(
 	WageperHour	REAL,
 	PRIMARY KEY(TAID),
 	FOREIGN KEY(StudentID) REFERENCES Student);
-
 
 CREATE TABLE TAs_Course(
 	TAID		CHAR(6),
