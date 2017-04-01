@@ -30,7 +30,7 @@
         <p>Find course with credits:</p><br>
 
         <p><input type="text" name="credits" size="6"></p>
-        <p><input type="submit" name="submit" id="submit" value="submit"></p>
+        <p><input type="submit" name="submit" id="submit" value="find"></p>
         <h6>The table will be shown below:</h6>
     </form>
 
